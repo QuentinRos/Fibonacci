@@ -15,6 +15,7 @@ class Fibo
             $result = $a + $nombre;
             $a = $nombre;
 
+            // Si la valeur dépasse la valeur maximale demandée :
             if ($result > $request->max)
             {
                 break;
@@ -23,6 +24,7 @@ class Fibo
         }
         $this->vieuxnombre = $a;
         $this->nombre = $nombre;
+        $this->iterations = $i-1;
     }
 
     public function getNumber()

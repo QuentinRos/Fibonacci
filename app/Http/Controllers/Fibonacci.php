@@ -10,9 +10,8 @@ class Fibonacci extends Controller
 {
     public function FibonacciSuite(Request $request)
     {
-        $fffibo = new Fibo($request->iteration);
+        $fffibo = new Fibo($request);
 
         return View("welcome")->with(['fibo'=>$fffibo]);
-
     }
 }

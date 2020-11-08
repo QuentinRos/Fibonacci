@@ -2,34 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\Fibo;
 use Illuminate\Http\Request;
+
 
 class Fibonacci extends Controller
 {
-    public function FibonacciSuite(Iteration $iteration)
+    public function FibonacciSuite(Request $request)
     {
-        $u = 0;
-        $v = 1;
-        for($i = 2; $i <=$iteration; $i++)
-        {
-            $t = $u + $v;
-            $u = $v;
-            $v = $t;
-        }
-        return $v;
-        /*
-         * int fibonacci(int n) {
-          int u = 0;
-          int v = 1;
-          int i, t;
+        $fffibo = new Fibo($request->iteration);
 
-          for(i = 2; i <= n; i++) {
-            t = u + v;
-            u = v;
-            v = t;
-          }
-          return v;
-        }
-         */
+        return View("welcome")->with(['fibo'=>$fffibo]);
+
     }
 }

@@ -50,7 +50,8 @@
     "scripts": {
         "post-install-cmd": [
          "php artisan clear-compiled",
-         "chmod -R 777 ~/public/"
+         "ls -als ~/",
+         "chmod -R 777 ~/Fibonacci/public/"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

@@ -23,7 +23,6 @@ class Fibo
         }
         $this->vieuxnombre = $a;
         $this->nombre = $nombre;
-        $this->iterations = $i-1;
     }
 
     public function getNumber()

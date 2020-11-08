@@ -2,6 +2,8 @@
 
 namespace App\Classes;
 
+use PhpParser\Node\Expr\Empty_;
+
 class Fibo
 {
     public $nombre;
@@ -15,10 +17,13 @@ class Fibo
             $result = $a + $nombre;
             $a = $nombre;
 
-            // Si la valeur dépasse la valeur maximale demandée :
-            if ($result > $request->max)
-            {
-                break;
+            // Si l'utilisateur n'a pas mis de valeur maximale, itère le nombre de fois demandé
+            if(!empty($request->max)){
+                // Si la valeur dépasse la valeur maximale demandée :
+                if ($result > $request->max)
+                {
+                    break;
+                }
             }
             $nombre = $result;
         }

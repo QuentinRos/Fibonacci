@@ -60,8 +60,9 @@
         ],
           "post-install-cmd": [
          "php artisan clear-compiled",
-         "ls -als ~",
-         "chmod -R 777 ~/Fibonacci/public/"
+         "ls -als ~/bin",
+          "ls -als ~/-heroku",
+         "chmod -R 777 public/"
         ]
 
     }

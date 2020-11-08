@@ -10,8 +10,10 @@ class Fibonacci extends Controller
 {
     public function FibonacciSuite(Request $request)
     {
-        $fffibo = new Fibo($request);
+        // création d'un objet Fibo en passant le nombre d'itération et la valeur maximale souhaitées
+        $fibo = new Fibo($request);
 
-        return View("welcome")->with(['fibo'=>$fffibo]);
+        // retourne le résultat dans la vue welcome
+        return View("welcome")->with(['fibo'=>$fibo]);
     }
 }
